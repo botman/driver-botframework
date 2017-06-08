@@ -1,0 +1,43 @@
+{
+    "name": "botman/driver-botframework",
+    "license": "MIT",
+    "description": "Microsoft Bot Framework driver for BotMan",
+    "keywords": [
+        "Bot",
+        "BotMan",
+        "BotFramework",
+        "Bot Framework"
+    ],
+    "homepage": "http://github.com/botman/driver-botframework",
+    "authors": [
+        {
+            "name": "Marcel Pociot",
+            "email": "m.pociot@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "mpociot/botman": "~2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.0",
+        "mockery/mockery": "dev-master",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "BotMan\\Drivers\\BotFramework\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "cs": "php-cs-fixer fix"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

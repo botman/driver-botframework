@@ -1,0 +1,9 @@
+{
+    "botman/driver-config": [
+        "stubs/botframework.php"
+    ],
+    "botman/driver": [
+        "BotMan\\Drivers\\BotFramework\\BotFrameworkDriver",
+        "BotMan\\Drivers\\BotFramework\\BotFrameworkImageDriver"
+    ]
+}
