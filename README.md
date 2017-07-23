@@ -2,6 +2,11 @@
 
 BotMan driver to connect Microsoft Bot Framework with [BotMan](https://github.com/botman/botman)
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/botman/driver-botframework.svg?style=flat-square)](https://packagist.org/packages/botman/driver-botframework)
+[![Build Status](https://travis-ci.org/botman/driver-botframework.svg?branch=master)](https://travis-ci.org/botman/driver-botframework)
+[![codecov](https://codecov.io/gh/botman/driver-botframework/branch/master/graph/badge.svg)](https://codecov.io/gh/botman/driver-botframework)
+
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
