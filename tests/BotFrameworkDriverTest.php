@@ -223,7 +223,7 @@ class BotFrameworkDriverTest extends PHPUnit_Framework_TestCase
             'botframework' => [
                 'app_id' => 'app_id',
                 'app_key' => 'app_key',
-            ]
+            ],
         ], $htmlInterface);
 
         $this->assertTrue($driver->isConfigured());
@@ -232,7 +232,7 @@ class BotFrameworkDriverTest extends PHPUnit_Framework_TestCase
             'botframework' => [
                 'app_id' => null,
                 'app_key' => null,
-            ]
+            ],
         ], $htmlInterface);
 
         $this->assertFalse($driver->isConfigured());
@@ -280,7 +280,7 @@ class BotFrameworkDriverTest extends PHPUnit_Framework_TestCase
             'botframework' => [
                 'app_id' => 'app_id',
                 'app_key' => 'app_key',
-            ]
+            ],
         ], $html);
 
         $user_id = '29:1zPNq1EP2_H-mik_1MQgKYp0nZu9tUljr2VEdTlGhEo7VlZ1YVDVSUZ0g70sk1';
@@ -326,7 +326,7 @@ class BotFrameworkDriverTest extends PHPUnit_Framework_TestCase
             'botframework' => [
                 'app_id' => 'app_id',
                 'app_key' => 'app_key',
-            ]
+            ],
         ], $html);
 
         $message = $driver->getMessages()[0];
@@ -369,7 +369,7 @@ class BotFrameworkDriverTest extends PHPUnit_Framework_TestCase
             'botframework' => [
                 'app_id' => 'app_id',
                 'app_key' => 'app_key',
-            ]
+            ],
         ], $html);
 
         $user = '29:1zPNq1EP2_H-mik_1MQgKYp0nZu9tUljr2VEdTlGhEo7VlZ1YVDVSUZ0g70sk1';
@@ -414,7 +414,7 @@ class BotFrameworkDriverTest extends PHPUnit_Framework_TestCase
             'botframework' => [
                 'app_id' => 'app_id',
                 'app_key' => 'app_key',
-            ]
+            ],
         ], $html);
 
         $message = $driver->getMessages()[0];
@@ -460,7 +460,7 @@ class BotFrameworkDriverTest extends PHPUnit_Framework_TestCase
             'botframework' => [
                 'app_id' => 'app_id',
                 'app_key' => 'app_key',
-            ]
+            ],
         ], $html);
 
         $message = $driver->getMessages()[0];
@@ -509,7 +509,7 @@ class BotFrameworkDriverTest extends PHPUnit_Framework_TestCase
             'botframework' => [
                 'app_id' => 'app_id',
                 'app_key' => 'app_key',
-            ]
+            ],
         ], $html);
 
         $message = $driver->getMessages()[0];
@@ -558,7 +558,7 @@ class BotFrameworkDriverTest extends PHPUnit_Framework_TestCase
             'botframework' => [
                 'app_id' => 'app_id',
                 'app_key' => 'app_key',
-            ]
+            ],
         ], $html);
 
         $message = $driver->getMessages()[0];
