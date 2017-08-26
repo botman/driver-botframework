@@ -28,6 +28,7 @@ class BotFrameworkDriver extends HttpDriver
     {
         $this->payload = new ParameterBag((array) json_decode($request->getContent(), true));
         $this->event = Collection::make($this->payload->all());
+        $this->config = Collection::make($this->config->get('botframework'));
     }
 
     /**
@@ -118,8 +119,8 @@ class BotFrameworkDriver extends HttpDriver
     public function getAccessToken()
     {
         $response = $this->http->post('https://login.microsoftonline.com/botframework.com/oauth2/v2.0/token', [], [
-            'client_id' => $this->config->get('microsoft_app_id'),
-            'client_secret' => $this->config->get('microsoft_app_key'),
+            'client_id' => $this->config->get('app_id'),
+            'client_secret' => $this->config->get('app_key'),
             'grant_type' => 'client_credentials',
             'scope' => 'https://api.botframework.com/.default',
         ]);
@@ -187,7 +188,7 @@ class BotFrameworkDriver extends HttpDriver
 
         if (strstr($this->apiURL, 'webchat.botframework')) {
             $parameters['from'] = [
-                'id' => $this->config->get('microsoft_bot_handle'),
+                'id' => $payload['recipient']['id'],
             ];
         }
 
@@ -213,7 +214,7 @@ class BotFrameworkDriver extends HttpDriver
      */
     public function isConfigured()
     {
-        return ! empty($this->config->get('microsoft_app_id')) && ! empty($this->config->get('microsoft_app_key'));
+        return ! empty($this->config->get('app_id')) && ! empty($this->config->get('app_key'));
     }
 
     /**
