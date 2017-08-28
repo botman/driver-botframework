@@ -5,8 +5,6 @@ namespace Tests;
 use Mockery as m;
 use BotMan\BotMan\Http\Curl;
 use PHPUnit_Framework_TestCase;
-use BotMan\BotMan\BotManFactory;
-use BotMan\BotMan\Cache\ArrayCache;
 use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Attachments\Video;
 use Symfony\Component\HttpFoundation\Request;
