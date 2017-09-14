@@ -80,6 +80,7 @@ class BotFrameworkDriver extends HttpDriver
                     $this->payload),
             ];
         }
+
         return $this->messages;
     }
 
