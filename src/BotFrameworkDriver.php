@@ -19,6 +19,8 @@ class BotFrameworkDriver extends HttpDriver
 {
     const DRIVER_NAME = 'BotFramework';
 
+    protected $messages = [];
+
     protected $apiURL;
 
     /**
@@ -72,10 +74,13 @@ class BotFrameworkDriver extends HttpDriver
         $pattern = '/<at id=(.*?)at>[^(\x20-\x7F)\x0A]*\s*/';
         $message = preg_replace($pattern, '', $this->event->get('text'));
 
-        return [
-            new IncomingMessage($message, $this->event->get('from')['id'], $this->event->get('conversation')['id'],
-                $this->payload),
-        ];
+        if (empty($this->messages)) {
+            $this->messages = [
+                new IncomingMessage($message, $this->event->get('from')['id'], $this->event->get('conversation')['id'],
+                    $this->payload),
+            ];
+        }
+        return $this->messages;
     }
 
     /**

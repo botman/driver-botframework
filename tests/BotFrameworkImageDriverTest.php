@@ -88,6 +88,16 @@ class BotFrameworkImageDriverTest extends PHPUnit_Framework_TestCase
     }
 
     /** @test */
+    public function it_returns_the_message_objects_as_reference()
+    {
+        $driver = $this->getDriver($this->getResponseData());
+        $message = $driver->getMessages()[0];
+        $hash = spl_object_hash($message);
+
+        $this->assertSame($hash, spl_object_hash($driver->getMessages()[0]));
+    }
+
+    /** @test */
     public function it_returns_the_image()
     {
         $driver = $this->getDriver($this->getResponseData());
