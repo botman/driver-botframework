@@ -187,7 +187,7 @@ class BotFrameworkDriver extends HttpDriver
         /**
          * Originated messages use the getSender method, otherwise getRecipient.
          */
-        $recipient = $matchingMessage->getSender() === '' ? $matchingMessage->getRecipient() : $matchingMessage->getSender();
+        $recipient = $matchingMessage->getRecipient() === '' ? $matchingMessage->getSender() : $matchingMessage->getRecipient();
         $payload = is_null($matchingMessage->getPayload()) ? [] : $matchingMessage->getPayload()->all();
         $this->apiURL = Collection::make($payload)->get('serviceUrl',
                 Collection::make($additionalParameters)->get('serviceUrl')).'/v3/conversations/'.urlencode($recipient).'/activities';
