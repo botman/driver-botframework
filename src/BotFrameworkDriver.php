@@ -98,8 +98,9 @@ class BotFrameworkDriver extends HttpDriver
      */
     public function getUser(IncomingMessage $matchingMessage)
     {
-        return new User($matchingMessage->getRecipient(), null, null,
-            Collection::make($matchingMessage->getPayload())->get('from')['name']);
+        $userInfo = Collection::make($matchingMessage->getPayload())->get('from');
+        
+        return new User($matchingMessage->getRecipient(), null, null, $userInfo['name'], $userInfo);
     }
 
     /**
