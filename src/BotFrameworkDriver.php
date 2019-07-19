@@ -72,7 +72,13 @@ class BotFrameworkDriver extends HttpDriver
     {
         // replace bot's name for group chats and special characters that might be sent from Web Skype
         $pattern = '/<at id=(.*?)at>[^(\x20-\x7F)\x0A]*\s*/';
-        $message = preg_replace($pattern, '', $this->event->get('text'));
+        $channelData = $this->event->get('channelData',[]);
+        if (isset($channelData['text'])) {
+                $message = preg_replace($pattern, '', $channelData['text']);
+        } else {
+                $message = preg_replace($pattern, '', $this->event->get('text'));
+        }
+
 
         if (empty($this->messages)) {
             $this->messages = [
