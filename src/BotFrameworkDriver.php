@@ -52,7 +52,7 @@ class BotFrameworkDriver extends HttpDriver
     public function getConversationAnswer(IncomingMessage $message)
     {
         if (false !== strpos($message->getText(), '<botman value="')) {
-            preg_match('/<botman value="(.*)"><\/botman>/', $message->getText(), $matches);
+            preg_match('/<botman value="(.*)" \/>/', $message->getText(), $matches);
 
             return Answer::create($message->getText())
                 ->setInteractiveReply(true)

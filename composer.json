@@ -23,7 +23,7 @@
         "botman/studio-addons": "~1.0",
         "illuminate/contracts": "~5.5.0",
         "phpunit/phpunit": "~5.0",
-        "mockery/mockery": "dev-master",
+        "mockery/mockery": "~1.3",
         "ext-curl": "*"
     },
     "autoload": {
