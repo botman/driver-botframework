@@ -534,7 +534,7 @@ class BotFrameworkDriverTest extends PHPUnit_Framework_TestCase
             ],
         ]);
 
-        $text = 'I use botman with Skype<botman value="yes"></botman>';
+        $text = 'I use botman with Skype<botman value="yes" />';
         $message = new IncomingMessage($text, '29:2ZC81QtrQQti_yclfvcaNZnRgNSihIXUc6rgigeq82us', '29:2ZC81QtrQQti_yclfvcaNZnRgNSihIXUc6rgigeq82us');
 
         $answer = $driver->getConversationAnswer($message);
